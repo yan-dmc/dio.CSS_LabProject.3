@@ -1,0 +1,171 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.font {
+    font-family: Roboto;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23.44px;
+}
+.size2 {
+    font-size: 14px;
+    line-height: 16.41px;
+}
+.size3 {
+    font-size: 12px;
+    line-height: 14.06px;
+}
+.fontGray {
+    color: rgba(81, 81, 81, 1);
+}
+.weight2 {
+    font-weight: 400;
+}
+
+body {
+    background: rgba(249, 249, 249, 1);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid: 
+    "header header" 3.5rem
+    "aside main" 1fr
+    / 13.625rem 2fr; 
+}
+
+header {
+    background: rgb(255, 255, 255);
+    grid-area: header;
+    display: grid;
+    grid: 
+    "left center right"
+    / 1fr 1fr 1fr; 
+    place-items: center;
+
+    & .header-left {
+        /* background: rgb(64, 35, 255); */
+        display: grid;
+        grid: 1fr / 1fr 1fr;
+        width: 9.125rem;
+        grid-area: left;
+        justify-self: left;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 1.5rem;
+    }
+    
+    & .header-center {
+        /* background: rgb(255, 243, 82); */
+        display: grid;
+        grid: auto / auto auto;
+        justify-content: center;
+
+        & .rect2 {
+            position: relative;
+            & .lupa {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin: .5rem .6rem;
+            }
+        }
+    }
+    
+    & .header-right {
+        /* background: rgb(91, 255, 82); */
+        grid-area: right;
+        justify-self: right;
+        display: grid;
+        grid: auto / auto auto auto;
+        justify-content: space-between;
+        align-items: center;
+        width: 8.125rem;
+        margin-right: 1.5rem;
+
+        & .avatar {
+            width: 2.125rem;
+            height: 2.125rem;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: rgb(230, 230, 230);
+            justify-content: center;
+            align-items: center;
+
+            & img {
+                width: inherit;
+                height: inherit;
+            }
+        }
+    }
+}
+
+
+aside {
+    background: rgb(255, 255, 255);
+    grid-area: aside;
+    display: grid;
+    grid: auto-flow min-content / max-content;
+    gap: 1rem;
+    justify-items: start;
+    padding: 1.5rem;
+
+    & .items {
+        /* background-color: rgb(226, 43, 43); */
+        display: grid;
+        grid: auto / auto auto;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+main {
+    /* background: rgb(164, 138, 138); */
+    grid-area: main;
+    display: grid;
+    grid: auto-flow max-content / repeat(auto-fit, minmax(16.375rem, 1fr));
+    place-items: unset;
+    padding: 1.5rem;
+    overflow: hidden auto;
+}
+
+.main-items {
+    /* background-color: blueviolet; */
+    display: grid;
+    grid: 
+    "thumb thumb" max-content
+    "channel title" max-content
+    ". description" max-content
+    / 1fr 5fr;
+    padding: 1rem;
+}
+
+.thumb {
+    /* background-color: brown; */
+    grid-area: thumb;
+
+    & img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.channel {
+    /* background-color: aquamarine; */
+    grid-area: channel;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+.title {
+    /* background-color: chocolate; */
+    grid-area: title;
+    margin-top: 1rem;
+}
+
+.description {
+    /* background-color: coral; */
+    grid-area: description;
+}
